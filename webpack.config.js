@@ -12,7 +12,11 @@ module.exports = {
   },
   devtool: "eval-source-map",
   devServer: {
-    watchFiles: ["./src/template.html"],
+    static: {
+        directory: path.join(__dirname, 'dist'),
+    },
+    port: 8081,
+    open: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
